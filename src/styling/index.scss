@@ -1,0 +1,240 @@
+* {
+  padding: 0;
+  margin: 0;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.nav {
+  width: calc(100vw - 3rem - 1px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1rem;
+  background-color: #fff;
+
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+
+  .left {
+    a {
+      text-decoration: none;
+      color: black;
+    }
+  }
+
+  .right {
+    display: flex;
+    flex-direction: row;
+    padding-right: 2rem;
+
+    a {
+      background-color: white;
+      border-radius: 1px;
+      text-decoration: none;
+      color: black;
+      text-align: center;
+      align-self: center;
+    }
+
+    a, button {
+      width: 80px;
+      margin: 4px;
+      padding: 2px;
+      transition: top 330ms ease-in-out;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    button {
+      background-color: blue;
+      color: white;
+      border-radius: 8px;
+      outline: none;
+      border: none;
+      padding: 4px;
+    }
+
+    .final {
+      z-index: 10;
+    }
+
+    .last {
+      position: relative;
+      text-decoration: none;
+
+      a {
+        position: absolute;
+      }
+    }
+
+    .open {
+      @for $i from 1 through 3 {
+        a:nth-child(#{$i}) {
+          left: -6px;
+          top: ($i) * 28px - 16px;
+          z-index: -2;
+        }
+      }
+    }
+
+    .closed {
+      a {
+        left: -6px;
+        top: -28px;
+        z-index: -2;
+
+        color: transparent;
+      }
+    }
+  }
+}
+
+#footer {
+  width: calc(100vw - 4rem);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 4px 1rem;
+  height: 100vh;
+
+  input, textarea {
+    border: 0;
+    outline: 0;
+    padding: 8px;
+    padding: 4px;
+  }
+
+  .left-side {
+    width: 500px;
+    height: 60%;
+    padding: 1rem;
+    background-color: #c0c0c0;
+    border-radius: 25px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    text-align: left;
+
+    button {
+      border: 0;
+      outline: 0;
+      background-color: blue;
+      color: white;
+      border-radius: 8px;
+      padding: 0 4px;
+    }
+    
+    .small {
+      width: 200px;
+      input {
+        width: 180px;
+      }
+    }
+
+    .large {
+      width: 450px;
+
+      textarea {
+        width: 432px;
+      }
+    }
+  }
+  
+  .right-side {
+    padding-top: 5rem;
+    display: flex;
+    align-self: baseline;
+    flex-direction: column;
+    color: #5f5f5f;
+
+    .extra {
+      margin-top: 1rem;
+      
+    }
+  }
+}
+
+.main {
+  height: calc(100vh - 42px);
+  z-index: -1;
+}
+
+#home {
+  height: calc(100vh - 42px);
+  z-index: -1;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+    filter:opacity(85%);
+    z-index: 1;
+  }
+
+  .side {
+    position: absolute;
+    top: 240px;
+    left: 80px;
+    color: white;
+    width: 400px;
+    text-shadow: 1px 1px 2px black;
+
+    h2 {
+      font-size: 40px;
+    }
+  }
+
+  
+}
+
+#about, #dice, #blackjack {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.openers {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: left;
+
+  .opener {
+    margin-top: 1rem;
+    width: 400px;
+    padding: 1rem;
+    border: grey 1px solid;
+    border-radius: 8px;
+    position: relative;
+
+    button {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      border: none;
+      outline: none;
+      background-color: #cfcfcf;
+      position: absolute;
+      top: 4px;
+      right: 4px;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+}
